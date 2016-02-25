@@ -8,13 +8,17 @@ TEMPLATE = app
 HEADERS += \
     player.h \
     controls.h \
-    video.h
+    video.h \
+    audipplayer.h \
+    mainwin.h
 
 SOURCES += \
     player.cpp \
     main.cpp \
     controls.cpp \
-    video.cpp
+    video.cpp \
+    audipplayer.cpp \
+    mainwin.cpp
 
 FORMS +=
 
