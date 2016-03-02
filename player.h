@@ -1,14 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
 #include <QWidget>
 #include <QMediaPlayer>
 #include <QVideoWidget>
 #include <QPushButton>
-#include <QLabel>
 #include <QSlider>
 #include <QMediaPlaylist>
+#include <QVBoxLayout>
 #include "video.h"
+#include "controls.h"
 
 class Player : public QWidget
 {
@@ -19,36 +19,26 @@ public:
 signals:
     void screenChanged(bool fullScreen);
 private slots:
-    void openFile();
-    void openFile2();
-    void prevClick();
-    void nextClick();
-    void prevClick2();
-    void nextClick2();
+    void prevClick(int num);
+    void nextClick(int num);
     void durationChange(qint64 duration);
     void positionChange(qint64 position);
     void seek(int seconds);
-    void durationChange2(qint64 duration);
-    void positionChange2(qint64 position);
-    void seek2(int seconds);
+    void newStream();
+
     void videoAvailable(bool available);
 
 private:
-     QMediaPlayer *player;
-     QMediaPlayer *player2;
      QPushButton *fullBut;
-     Video *videoWin;
-     QLabel *play1;
-     QLabel *play2;
-     QMediaPlaylist *playlistik;
-     QMediaPlaylist *playlistik2;
-     QSlider *slider1;
-     QSlider *slider2;
+     Video *videoWin;        
+     QSlider *slider1;    
      qint64 duration;
      QLabel *durLab1;
-     QLabel *durLab2;
+     QPushButton *addBut;
+     QPushButton *delBut;
+     MultiPlayer *player;
 
-     void updateDuration(qint64 currentDur, int labNum);
+     void updateDuration(qint64 currentDur);
 };
 
 #endif // PLAYER_H

@@ -8,13 +8,15 @@ TEMPLATE = app
 HEADERS += \
     player.h \
     controls.h \
-    video.h
+    video.h \
+    multiplayer.h
 
 SOURCES += \
     player.cpp \
     main.cpp \
     controls.cpp \
-    video.cpp
+    video.cpp \
+    multiplayer.cpp
 
 FORMS +=
 
