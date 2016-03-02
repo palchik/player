@@ -1,4 +1,4 @@
-#include "player.h"
+#include "multiplayer.h"
 
 #include <QApplication>
 
@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    Player player;
+    Multiplayer player;
     player.show();
     return app.exec();
 }
